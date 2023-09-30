@@ -1,0 +1,9 @@
+PRINT "左辺の値"
+INPUT left
+
+PRINT "右辺の値"
+INPUT right
+
+SET sum 0
+ADD sum left right
+PRINT sum

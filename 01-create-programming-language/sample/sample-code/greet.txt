@@ -1,0 +1,3 @@
+PRINT "あなたの名前は？"
+INPUT name
+PRINT "こんにちは、" name "さん"
