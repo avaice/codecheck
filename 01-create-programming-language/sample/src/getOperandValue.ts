@@ -1,4 +1,4 @@
-import { getVariant } from "./variant"
+import { vars } from "./main"
 
 export const getOperandValue = (operand: string) => {
   switch (true) {
@@ -7,7 +7,7 @@ export const getOperandValue = (operand: string) => {
     case !isNaN(Number(operand)):
       return operand
     default:
-      const varValue = getVariant(operand)
+      const varValue = vars.get(operand)
       if (!varValue) {
         throw new Error(`${operand}は未定義の変数です`)
       }

@@ -1,6 +1,6 @@
 import { getOperandValue } from "./getOperandValue"
-import { getVariant, setVariant } from "./variant"
 import readline from "readline"
+import { vars } from "./main"
 
 export const callPrint = (operands: string[]) => {
   const text = operands.map((v) => getOperandValue(v)).join("")
@@ -11,7 +11,7 @@ export const callSet = (operands: string[]) => {
   if (operands.length !== 2) {
     throw new Error("引数の数は2個である必要があります")
   }
-  setVariant(operands[0], operands[1])
+  vars.set(operands[0], operands[1])
 }
 
 export const callInput = async (operands: string[]) => {
@@ -26,7 +26,7 @@ export const callInput = async (operands: string[]) => {
       rl.close()
     })
   })
-  setVariant(key, result)
+  vars.set(key, result)
 }
 
 export const calculate = (
@@ -34,7 +34,7 @@ export const calculate = (
   operands: string[]
 ) => {
   const key = operands[0]
-  let base = Number(getVariant(key))
+  let base = Number(getOperandValue(key))
   const nums = operands
     .slice(1, operands.length)
     .map((v) => Number(getOperandValue(v)))
@@ -53,5 +53,5 @@ export const calculate = (
         base /= v
     }
   })
-  setVariant(key, base.toString())
+  vars.set(key, base.toString())
 }

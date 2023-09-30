@@ -1,7 +1,9 @@
-const variantMap = new Map<string, string>()
-export const getVariant = (key: string) => {
-  return variantMap.get(key)
-}
-export const setVariant = (key: string, value: string) => {
-  variantMap.set(key, value)
+export class Variant {
+  private variantMap = new Map<string, string>()
+  get(key: string) {
+    return this.variantMap.get(key)
+  }
+  set(key: string, value: string) {
+    this.variantMap.set(key, value)
+  }
 }
