@@ -10,7 +10,7 @@
 
 ## 構文一覧
 
-- `“”`
+- `""`
   - ダブルクォーテーションで囲まれた文字列
   - 同じように扱われるもの
     - `1234`
@@ -22,15 +22,15 @@
 - `PRINT`
   - 引数で指定した文字列を表示できる
   - 例
-    - `PRINT “Hello, World”`
+    - `PRINT "Hello, World"`
       - Hello, World
-    - `PRINT “今日は” “いい天気”`
+    - `PRINT "今日は" "いい天気"`
       - 今日はいい天気
 - `SET`
   - 変数を設定する
   - 変数宣言も兼ねる
   - 例
-    - `SET text “あいうえお”`
+    - `SET text "あいうえお"`
       - text に「あいうえお」が設定される
 - `ADD`
   - 加算命令。計算結果は第一引数の変数に加算される。
@@ -74,9 +74,9 @@
 ### あいさつ
 
 ```
-PRINT “あなたの名前は？”
+PRINT "あなたの名前は？"
 INPUT name
-PRINT “こんにちは、” name “さん”
+PRINT "こんにちは、" name "さん"
 ```
 
 「たろう」と入力した時の期待値
@@ -90,19 +90,20 @@ SET num2 -4
 ADD num 10 num2
 SUB num 4
 MUL num 2 2
+DIV num 2
 ADD num 0.2
 PRINT num
 ```
 
-期待値:16.2
+期待値:24.2
 
 ### 電卓
 
 ```
-PRINT “左辺の値”
+PRINT "左辺の値"
 INPUT left
 
-PRINT “右辺の値”
+PRINT "右辺の値"
 INPUT right
 
 SET sum 0
